@@ -11,6 +11,8 @@ services:
     init: true
     environment:
       - TZ="Europe/Amsterdam"
+    devices:
+      - "/dev/snd:/dev/snd"
     volumes:
       - roon-app:/app
       - roon-data:/data
