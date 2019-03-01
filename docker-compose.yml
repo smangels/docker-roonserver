@@ -7,14 +7,14 @@ services:
     image: steefdebruijn/docker-roonserver
     container_name: roon-server
     network_mode: "host"
-    restart: always
+    restart: unless-stopped
     init: true
     environment:
       - TZ="Europe/Amsterdam"
     volumes:
       - roon-app:/app
       - roon-data:/data
-      - /path/to/your/music:/music
+      - /home/smangels/projects/docker-roonserver/music:/music
       - roon-backups:/backup
 
 volumes:
